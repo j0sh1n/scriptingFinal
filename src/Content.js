@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import useContent from "./useContent";
 
 
 const Content = () => {
-    const code = window.location.href;
 
 
     //increment page
@@ -16,14 +15,14 @@ const Content = () => {
             return currentCount + amount
         })
     }
+    // const { title,script,extra } = useContent(count);
 
 
 
 
-useEffect(()=> {
-
-
-},[count])
+    // useEffect(() => {
+    //     script
+    // }, [count])
 
 
 
@@ -52,15 +51,18 @@ useEffect(()=> {
 
     return (
         <>
+            <h1>Title</h1>
 
-            <h1>{code}</h1>
+
+            {script}
+
+
 
             <button onClick={() => adjustCount(-1)}>Back</button>
 
             <span>{count}</span>
 
             <button onClick={() => adjustCount(+1)}>Next</button>
-
         </>
     );
 }

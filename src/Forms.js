@@ -1,16 +1,54 @@
+import { useState } from "react";
+
 const Forms = ({ samples }) => {
+    const [lastName, setLastName] = useState();
+    const [firstName, setFirstName] = useState();
+    const [middleName, setMiddleName] = useState();
 
     return (
         <div className="forms">
-            {samples.map((sample) => (
 
-                <div className="content" key={sample.id}>
-                    <h1>{sample.title}</h1>
-                    <p>{sample.author}</p>
+            <h1>Form</h1>
+            <form action="">
+                <label htmlFor="lastName">First Name:</label>
+                <input
+                    type="text"
+                    name="lastName"
+                    required
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    id="" />
 
-                </div>
+                <label htmlFor="firstName">First Name:</label>
+                <input
+                    type="text"
+                    name="firstName"
+                    required
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    id="" />
 
-            ))}
+                <label htmlFor="middleName">First Name:</label>
+                <input
+                    type="text"
+                    name="middleName"
+                    required
+                    value={middleName}
+                    onChange={(e) => setMiddleName(e.target.value)}
+                    id="" />
+
+                <label htmlFor="middleName">First Name:</label>
+                <input
+                    type="text"
+                    name="middleName"
+                    required
+                    value={middleName}
+                    onChange={(e) => setMiddleName(e.target.value)}
+                    id="" />
+            </form>
+
+
+
         </div>
     );
 }

@@ -8,7 +8,7 @@ const Spiels = () => {
             <h1>Spiels</h1>
             <ol>
                 <li>
-                    <Link to={`/introduction/${id}`}>
+                    <Link to="/introduction">
                         Introduction
                     </Link>
                 </li>

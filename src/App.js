@@ -1,8 +1,13 @@
 import "./App.css";
-import Content from "./Content";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Spiel from "./Spiel";
-
+import Header from "./Header";
+import Footer from "./Footer";
+import Spiels from "./Spiels";
+import Forms from "./Forms";
+import Introduction from "./Introduction";
+import DataPrivacy from "./DataPrivacy";
+import FormerEmployee from "./FormerEmployee";
+import PersonalInformation from "./PersonalInformation";
 
 function App() {
 
@@ -10,21 +15,32 @@ function App() {
 
 
     <Router>
-      <div className="App flex-column">
+      <div className="App flex-c">
+        <Header />
+        <div className="content flex-h">
+          <Spiels />
 
-        <div className="content flex-horizontal">
           <Switch>
 
-            <Route path="/code/">
-
-              <Content />
-
+            <Route path="/introduction">
+              <Introduction />
             </Route>
+            <Route path="/dataPrivacy">
+              <DataPrivacy />
+            </Route>
+            <Route path="/personalInformation">
+              <PersonalInformation />
+            </Route>
+            <Route path="/formerEmployee">
+              <FormerEmployee />
+            </Route>
+            
 
           </Switch>
 
+          <Forms />
         </div>
-
+        <Footer />
       </div>
     </Router>
   );

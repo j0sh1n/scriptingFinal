@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Forms from './Forms';
 
-const Home = () => {
+const Spiel = () => {
 
     const [samples, setSamples] = useState([
 
@@ -50,5 +50,5 @@ const Home = () => {
     );
 }
 
-export default Home
+export default Spiel
 
