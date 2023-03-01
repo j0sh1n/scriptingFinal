@@ -4,11 +4,14 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Spiels from "./Spiels";
 import Forms from "./Forms";
-import Introduction from "./Introduction";
-import DataPrivacy from "./DataPrivacy";
-import FormerEmployee from "./FormerEmployee";
-import PersonalInformation from "./PersonalInformation";
-
+import Introduction from "./spiels/Introduction";
+import DataPrivacy from "./spiels/DataPrivacy";
+import FormerEmployee from "./spiels/FormerEmployee.js"
+import PersonalInformation from "./spiels/PersonalInformation";
+import Education from "./spiels/Education";
+import Amenability from "./spiels/Amenability";
+import CallCenterAgent from "./spiels/CallCenterAgent";
+import Aspiration from "./spiels/Aspiration";
 function App() {
 
   return (
@@ -34,8 +37,20 @@ function App() {
             <Route path="/formerEmployee">
               <FormerEmployee />
             </Route>
-            
-
+            <Route path="/education">
+              <Education />
+            </Route>
+            <Route path="/callCenterAgent">
+              <CallCenterAgent />
+            </Route>
+            <Route path="/amenability">
+              <Amenability />
+            </Route>
+            <Route path="/aspiration">
+              <Aspiration />
+            </Route>
+            <Route path="/qualification">
+            </Route>
           </Switch>
 
           <Forms />

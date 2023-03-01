@@ -21,7 +21,7 @@ const PersonalInformation = () => {
     useEffect(() => {
 
         if (count === 0) {
-            setScript('Ask or verify for full name, email address, and Facebook account <br> Which city do you currently live in? <br> Are you currently of legal age to work? <br> Citizenship');
+            setScript("Let's start with the easy questions. Ask or verify for full name, email address, and Facebook account <br> Which city do you currently live in? <br> Are you currently of legal age to work? <br> Citizenship: Are you a Filipino? *if not, check for documents*");
 
         } else if (count === 1) {
             navigate.push("/formerEmployee");
@@ -39,7 +39,7 @@ const PersonalInformation = () => {
 
         <div className='content'>
 
-            <h1>Data Privacy</h1>
+            <h1>Personal Information</h1>
 
             <p>{script}</p>
 

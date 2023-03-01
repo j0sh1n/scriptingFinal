@@ -13,42 +13,42 @@ const Spiels = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/dataprivacy">
+                    <Link to="/dataPrivacy">
                         Data Privacy
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/personalInformation">
                         Personal Information
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/formerEmployee">
                         Former Employee
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/education">
                         Education
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/callCenterAgent">
                         Call Center Agent
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/amenability">
                         Amenability
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/aspiration">
                         Aspiration
                     </Link>
                 </li>
                 <li>
-                    <Link to="/">
+                    <Link to="/qualification">
                         Qualification
                     </Link>
                 </li>
