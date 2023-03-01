@@ -26,7 +26,7 @@ const DataPrivacy = () => {
                 />
                 I would like to ask for your permission to get your personal data, work experiences, and other information that are relevant to your application. this call is recorded for quality and training is that okay?
 
-            </label><br />
+            </label><br /> 
 
             <button onClick={() => navigate.goBack()}>Back</button>
 
