@@ -25,7 +25,7 @@ function App() {
 
           <Switch>
 
-            <Route path="/introduction">
+            <Route exact path="/">
               <Introduction />
             </Route>
             <Route path="/dataPrivacy">
