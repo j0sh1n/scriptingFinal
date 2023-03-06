@@ -1,9 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Header from "./Header";
-import Footer from "./Footer";
-import Spiels from "./Spiels";
-import Forms from "./Forms";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Spiels from "./components/Spiels";
+import Forms from "./components/Forms";
 import Introduction from "./spiels/Introduction";
 import DataPrivacy from "./spiels/DataPrivacy";
 import FormerEmployee from "./spiels/FormerEmployee.js"
@@ -12,12 +12,17 @@ import Education from "./spiels/Education";
 import Amenability from "./spiels/Amenability";
 import CallCenterAgent from "./spiels/CallCenterAgent";
 import Aspiration from "./spiels/Aspiration";
+import Qualification from "./spiels/Qualification";
+
 function App() {
 
   return (
 
 
     <Router>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@300&display=swap');
+      </style>
       <div className="App flex-c">
         <Header />
         <div className="content flex-h">
@@ -50,6 +55,7 @@ function App() {
               <Aspiration />
             </Route>
             <Route path="/qualification">
+              <Qualification />
             </Route>
           </Switch>
 

@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { Dialog } from '@headlessui/react'
 
 
 const Aspiration = () => {
     const navigate = useHistory();
-    //page increment
     const [value, setValue] = useState("");
-    const [id, setId] = useState();
     const [script, setScript] = useState("");
-
-    let [isOpen, setIsOpen] = useState(true)
 
     useEffect(() => {
 
@@ -30,7 +25,6 @@ const Aspiration = () => {
             setScript("We know how important it is to have a job where you grow into a leader. At ePerformax 95% of who we hire are leaders from within");
         } else if (value === "stability") {
             setScript("I understand how frustrating that can be, before ePerformax I jumped from job to job until I found ePerformax");
-
         }
 
     }, [value])
@@ -47,30 +41,29 @@ const Aspiration = () => {
             <p>If your own story is similar to theirs, let them know!</p>
 
             <select onChange={(e) => setValue(e.target.value)}>
-                <option
-                    value="breadwinner"
-                >Bread Winner</option>
-                <option
-                    value="money"
-                >Money</option>
-                <option
-                    value="caresAboutMe"
-                >Cares About Me</option>
-                <option
-                    value="englishSkill"
-                >English Skill</option>
-                <option
-                    value="promotion"
-                >Promotion</option>
-                <option
-                    value="notHappy"
-                >Not Happy</option>
-                <option
-                    value="leader"
-                >Leader</option>
-                <option
-                    value="stability"
-                >Stability</option>
+                <option value="breadwinner">
+                    Bread Winner
+                </option>
+                <option value="money">
+                    Money
+                </option>
+                <option value="caresAboutMe">
+                    Cares About Me</option>
+                <option value="englishSkill">
+                    English Skill
+                </option>
+                <option value="promotion">
+                    Promotion
+                </option>
+                <option value="notHappy">
+                    Not Happy
+                </option>
+                <option value="leader">
+                    Leader
+                </option>
+                <option value="stability">
+                    Stability
+                </option>
             </select>
 
             {value && <p> Aspiration script <br /> <br /> {script}</p>}

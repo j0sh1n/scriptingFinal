@@ -1,7 +1,7 @@
 const Header = () => {
     return (
     <>
-        <div className="header">
+        <div className="header flex-h">
             <div>LOGO</div>
             <div>
                 Applicant code:

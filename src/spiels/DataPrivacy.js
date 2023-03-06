@@ -18,19 +18,19 @@ const DataPrivacy = () => {
 
             <h1>Data Privacy</h1>
 
-
+            <p>I would like to ask for your permission to get your personal data, work experiences, and other information that are relevant to your application. this call is recorded for quality and training is that okay?
+            </p>
             <label>
                 <input type="checkbox"
                     value={dataPrivacy}
                     onChange={handleChange1}
                 />
-                I would like to ask for your permission to get your personal data, work experiences, and other information that are relevant to your application. this call is recorded for quality and training is that okay?
-
-            </label><br /> 
+                I agree
+            </label><br />
 
             <button onClick={() => navigate.goBack()}>Back</button>
 
-            <button onClick={() => navigate.push("/personalInformation")}>Next</button>
+            <button disabled={!dataPrivacy} onClick={() => navigate.push("/personalInformation")}>Next</button>
 
         </div>
 

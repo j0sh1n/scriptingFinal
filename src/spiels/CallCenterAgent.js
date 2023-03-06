@@ -6,18 +6,7 @@ const CallCenterAgent = () => {
     //page increment
     const [value, setValue] = useState();
 
-    const [script, setScript] = useState();
-
-    const [count, setCount] = useState(0);
-
     const navigate = useHistory();
-
-    function adjustCount(page) {
-
-        setCount(currentCount => {
-            return currentCount + page
-        })
-    }
 
     return (
         <div className='content'>

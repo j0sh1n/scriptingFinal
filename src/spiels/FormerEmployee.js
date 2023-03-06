@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { Dialog } from '@headlessui/react'
-
 
 const FormerEmployee = () => {
 
@@ -14,7 +12,6 @@ const FormerEmployee = () => {
 
     const navigate = useHistory();
 
-    let [isOpen, setIsOpen] = useState(true)
 
     function adjustCount(page) {
 
@@ -32,7 +29,7 @@ const FormerEmployee = () => {
             navigate.push("/education");
 
         } else if (count < 0) {
-            navigate.goBack();
+            ;
         }
 
     }, [count])
@@ -45,7 +42,7 @@ const FormerEmployee = () => {
 
             <h1>Former Employee</h1>
 
-            <p>{script}</p>
+            <p>Have you trained or been employed with us before?</p>
 
             <button onClick={() => setValue('Yes')}>Yes</button>
 
@@ -53,28 +50,11 @@ const FormerEmployee = () => {
 
 
             <div>
-                <button onClick={() => adjustCount(-1)}>Back</button>
+                <button onClick={() => navigate.goBack()}>Back</button>
 
-                <button disabled={!value} onClick={() => adjustCount(+1)}>Next</button>
+                <button disabled={!value} onClick={() => navigate.push("/education")}>Next</button>
             </div>
-            {/* <button onClick={()=>setIsOpen(true)}></button>
-        <Dialog open={isOpen} onClose={() => setIsOpen(false)}>
-            <Dialog.Panel>
-                <Dialog.Title>Deactivate account</Dialog.Title>
-                <Dialog.Description>
-                    This will permanently deactivate your account
-                </Dialog.Description>
-
-                <p>
-                    Are you sure you want to deactivate your account? All of your data
-                    will be permanently removed. This action cannot be undone.
-                </p>
-
-                <button onClick={() => setIsOpen(false)}>Deactivate</button>
-                <button onClick={() => setIsOpen(false)}>Cancel</button>
-            </Dialog.Panel>
-        </Dialog> */}
-
+           
         </div>
 
     );

@@ -1,6 +1,5 @@
 import {  useState } from 'react';
 import { useHistory } from "react-router-dom";
-import { Dialog } from '@headlessui/react'
 
 
 const Amenability = () => {
@@ -63,8 +62,8 @@ const Amenability = () => {
                     checked={amenability4}
                     onChange={handleChange4}
                 />
-                Amenable to work in Pasay/Roxas/Cebu?
-            </label>            {amenability2 && <label> Reason: <input type="text" /></label>}<br />
+                Amenable to work onsite Pasay/Roxas/Cebu?
+            </label>{!amenability4 && <label> <br /> Reason: <input type="text" /></label>}<br />
 
             <label>
                 <input type="checkbox"
@@ -72,7 +71,7 @@ const Amenability = () => {
                     onChange={handleChange5}
                 />
                 Can start immediately/ ASAP?
-            </label>{!amenability5 && <label> Why and when can they start? <input type="text" /></label>}<br />
+            </label>{!amenability5 && <label> <br /> Why and when can they start? <input type="text" /></label>}<br />
 
             <div>
                 <button onClick={() => navigate.goBack()}>Back</button>

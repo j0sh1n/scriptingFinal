@@ -5,6 +5,8 @@
 }
 
 .App {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .flex-c {
@@ -16,22 +18,26 @@
   display: flex;
 }
 
-.header {
-  display: flex;
-}
+.header {}
 
-.footer {
-}
+.footer {}
 
 .forms {
-  display: flex;
-  flex-direction: column;
+  flex-grow: 1;
+}
+
+.content {
+  flex-grow: 2;
+  justify-items: center;
 }
 
 .forms form {
   display: flex;
   flex-direction: column;
+  
+  
 }
 
-.spiels{
+.spiels {
+  flex-grow: 1;
 }

@@ -2,16 +2,12 @@ import { useEffect, useState } from 'react';
 import { useHistory } from "react-router-dom";
 
 const Introduction = () => {
-    // const { id } = useParams();
+    const navigate = useHistory();
 
     //page increment
     const [script, setScript] = useState();
 
     const [count, setCount] = useState(0);
-
-    // setCount(id);
-
-    const navigate = useHistory();
 
     function adjustCount(page) {
 
