@@ -23,7 +23,7 @@ const Education = () => {
                     </p>
                 </div>}
             {value === 'Graduated' &&
-                <div className='flex-c'>
+                <div>
                     <p>
                         <input type="text" />
                         Do you have pending board exam/result/licensure exam?
