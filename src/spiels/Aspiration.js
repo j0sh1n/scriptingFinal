@@ -36,9 +36,9 @@ const Aspiration = () => {
 
             <h1>Aspiration</h1>
 
-            <p>What made you interested to apply at ePerformax? And what would make you join/stay with us?</p>
-            <p>Identify the specific aspiration/want and use the appropriate aspiration statement.</p>
-            <p>If your own story is similar to theirs, let them know!</p>
+            <p>What made you interested to apply at ePerformax? <br /> <br /> And what would make you join/stay with us?</p><br />
+            <p><i> Identify the specific aspiration/want and use the appropriate aspiration statement.</i></p> <br />
+            <p>If your own story is similar to theirs, let them know!</p> <br />
 
             <select onChange={(e) => setValue(e.target.value)}>
                 <option value="breadwinner">
@@ -48,7 +48,8 @@ const Aspiration = () => {
                     Money
                 </option>
                 <option value="caresAboutMe">
-                    Cares About Me</option>
+                    Cares About Me
+                </option>
                 <option value="englishSkill">
                     English Skill
                 </option>
@@ -64,11 +65,11 @@ const Aspiration = () => {
                 <option value="stability">
                     Stability
                 </option>
-            </select>
+            </select><br />
 
-            {value && <p> Aspiration script <br /> <br /> {script}</p>}
+            {value && <p> <b>Aspiration script</b>  <br /> <br /> {script}</p>}
 
-            <div>
+            <div className='page'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 
                 <button disabled={!value} onClick={() => navigate.push("/qualification")}>Next</button>

@@ -6,7 +6,7 @@ const Footer = () => {
 
     
   return (
-    <div className="footer">
+    <div className="footer flex-h">
       <div className="footercolumn">
         <img src="../img/Picture1.png" alt="ePerformax Logo" id="logo" />
       </div>
@@ -16,7 +16,7 @@ const Footer = () => {
       <div className="footercolumn">
         <p>Need help? Email us at: </p>
         <b>
-          <a href="mailto:webapp@eperformax.com">
+          <a href="mailto:webapp@eperformax.com?Subject=Scripting Concern">
             webapp@eperformax.com
           </a>
         </b>

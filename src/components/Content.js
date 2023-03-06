@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import useContent from "../useContent";
 
 
 const Content = () => {
@@ -26,26 +25,34 @@ const Content = () => {
 
 
 
-    // useEffect(() => {
-    //     fetch(`https://accounts.zoho.com/oauth/v2/auth?scope=ZohoBigin.modules.ALL&client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=code&access_type=offline&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}`, {
-    //         method: 'GET',
-    //         mode: 'no-cors'
+    useEffect(() => {
+        fetch(`https://www.zohoapis.com/bigin/v1/Deals`, {
+            method: 'GET',
+            mode: 'no-cors',
+            headers: {
+                'Authorization': 'Zoho-oauthtoken 1000.67b8ebacf175c0b3aecf891f57992383.a010f579dbc5e707509392aa98c99c55',
+                    'Content-Type': 'application/json',      // 'Content-Type': 'application/x-www-form-urlencoded'
+                    'Cookie': '3d223cf300=e7daf194bba5b5684705c7476baa48dd; JSESSIONID=3D6398D7182CCC1596E141861FED3EEE; _zcsr_tmp=0ad9f33f-d720-4f69-94ad-66dbe3743b6b; crmcsr=0ad9f33f-d720-4f69-94ad-66dbe3743b6b',
+                    'Connection':'keep-alive',
+                    'Accept':'*/*',
+                    'Accept-Encoding':'gzip, deflate, br'
+                },
 
 
 
-    //     })
-    //         .then(response => {
-    //             console.log(response);
-    //         })
-    //         .then(data => {
-    //             console.log(data);
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
+        })
+            .then(response => {
+                console.log(response);
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
 
 
-    // }, [])
+    }, [])
 
 
 
@@ -54,7 +61,7 @@ const Content = () => {
             <h1>Title</h1>
 
 
-            {script}
+            {}
 
 
 

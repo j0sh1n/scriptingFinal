@@ -73,7 +73,7 @@ const Amenability = () => {
                 Can start immediately/ ASAP?
             </label>{!amenability5 && <label> <br /> Why and when can they start? <input type="text" /></label>}<br />
 
-            <div>
+            <div className='page'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 
                 <button onClick={() => navigate.push("/aspiration")}>Next</button>

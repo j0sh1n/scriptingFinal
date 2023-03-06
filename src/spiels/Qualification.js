@@ -19,7 +19,7 @@ const Qualification = () => {
             <button onClick={() => setScript()}>Unqualified</button>
 
             {script && <div></div>}
-            <div>
+            <div className='page'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 
                 <button disabled={!value} onClick={() => navigate.push("/qualification")}>Next</button>

@@ -25,7 +25,7 @@ function App() {
       </style>
       <div className="App flex-c">
         <Header />
-        <div className="content flex-h">
+        <div className="middle flex-h">
           <Spiels />
 
           <Switch>
