@@ -48,7 +48,6 @@ h1 {
   align-items: center;
   font-family: "Roboto", sans-serif;
   font-size: 100%;
-  
 }
 
 .footer a:link {
@@ -80,24 +79,21 @@ h1 {
   display: flex;
   flex-direction: column;
   font-size: 1.5vh;
-
   margin-top: 2vh;
 }
 
 .forms form input {
   margin: 5px 0px 2vh 0px;
-  width: 15vw;
+  width: 20vw;
   font-size: 1.5vh;
-
   height: 30px;
   padding-left: 10px;
 }
 .forms form select {
   margin: 5px 0px 2vh 0px;
-  width: 15vw;
+  width: 20vw;
   height: 30px;
   font-size: 1.5vh;
-
   padding-left: 10px;
 }
 
@@ -125,17 +121,92 @@ h1 {
   height: 86vh;
 }
 
-
-
 .content p {
-  padding: 0 5vw;
+  /* padding: 0px 10vw; */
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
+.fixed {
+  position: fixed;
+  top: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 0px 0;
+  width: 50vw;
+  padding: 0px 5vw;
+}
+
+.subcontent {
+  top: 5vh;
+  position: relative;
+}
+
+
+.selection button {
+  text-decoration: none;
+  height: 3vh;
+  width: 12vw;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 110%;
+  border-radius: 5px;
+  color: #000000;
+  font-weight: bold;
+  padding: 1px;
+  border-color: rgb(255, 255, 255);
+  border-style: none;
+  margin: 10px 10px;
+  box-shadow: 2px 5px 10px -1px #888888;
+}
+
+.selection button:hover {
+  box-shadow: 0px 6px 3px -3px #888888;
+}
+
+.selection button:active {
+  box-shadow: 0px 6px 3px -3px #888888;
+  font-size: 100%;
+}
+
+.circ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circ button {
+  text-decoration: none;
+  height: 3vh;
+  width: 7vw;
+  background: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 110%;
+  border-radius: 5px;
+  color: #000000;
+  font-weight: bold;
+  padding: 1px;
+  border-color: rgb(255, 255, 255);
+  border-style: none;
+  margin: 0 10px 0 0;
+  box-shadow: 2px 5px 10px -1px #888888;
+}
+
+.circ button:hover {
+  box-shadow: 0px 6px 3px -3px #888888;
+}
+.circ button:active {
+  box-shadow: 0px 6px 3px -3px #888888;
+  font-size: 100%;
+}
+
 .content h1 {
   position: absolute;
   top: 15vh;
 }
 
-.content button {
+.page button {
   text-decoration: none;
   height: 5vh;
   width: 10vw;
@@ -149,20 +220,19 @@ h1 {
   border-color: rgb(255, 255, 255);
   border-style: solid;
   border-width: 3px;
-  align-self: center;
 }
 
-.content button:hover {
+.page button:hover {
   background: rgb(255, 133, 133);
   /* background-color: rgb(136, 0, 0); */
 }
 
-.content button:active {
+.page button:active {
   background-color: rgb(136, 0, 0);
   /* background: rgb(255, 133, 133); */
 }
 
-.content button:disabled {
+.page button:disabled {
   background: rgb(164, 164, 164);
 }
 
@@ -189,9 +259,21 @@ h1 {
   margin: 2vh 0px 2vh 0px;
   font-size: 2vh;
   color: rgb(136, 0, 0);
+  width: 17vw;
+  height: 3vh;
 }
+
+.spiels li:hover {
+  /* background-color: rgba(255, 0, 0, 0.335); */
+  border-radius: 5px;
+  box-shadow: 2px 5px 10px -1px #888888;
+}
+
 .spiels a {
   font-size: 2vh;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(136, 0, 0);
 }
 
 .spiels a:link {
@@ -204,6 +286,8 @@ h1 {
 
 .spiels a:hover {
   color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.335);
-  border-radius: 5px;
+}
+.spiels a:active {
+  color: rgb(0, 0, 0);
+  font-size: 1.95vh;
 }

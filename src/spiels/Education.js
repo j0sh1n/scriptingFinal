@@ -20,14 +20,14 @@ const Education = () => {
                     <p>
                         <input type="text" />
                         Have you graduated? What degree/course/school?
-                    </p>
+                    </p><br />
                 </div>}
             {value === 'Graduated' &&
-                <div>
+                <div className='circ'>
                     <p>
-                        <input type="text" />
+                        <input type="text" /><br />
                         Do you have pending board exam/result/licensure exam?
-                    </p>
+                    </p><br />
                     <div>
                         <button onClick={() => setExtra(true)}>Yes</button>
                         <button onClick={() => setExtra(false)}>No</button>
@@ -39,7 +39,7 @@ const Education = () => {
             {value === 'Undergraduate' && <div><p><input type="text" /> What is your degree/course and your year level completed? Which school you attended?</p></div>}
 
             <br />
-            <div className='education'>
+            <div className='selection'>
                 <button onClick={() => { setValue('In College'); setExtra(false); }}>In College</button>
                 <button onClick={() => { setValue('Graduated'); setExtra(false); }}>Graduated</button>
                 <button onClick={() => { setValue('Undergraduate'); setExtra(false); }}>Undergraduate</button>

@@ -17,13 +17,13 @@ const FormerEmployee = () => {
             <h1>Former Employee</h1>
 
             <p>Have you trained or been employed with us before?</p><br />
-            <div>
+            <div className='selection'>
                 <button onClick={() => setValue('Yes')}>Yes</button>
 
                 <button onClick={() => setValue('No')}>No</button>
 
             </div>
-            {value==='Yes' && <div><br /><label htmlFor="">Indicate the reason and date <br /><input type="text" /></label></div> }
+            {value==='Yes' && <div><br /><label htmlFor="">Indicate the reason you left and separation date <br /><input type="text" /></label></div> }
             <div className='page'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 

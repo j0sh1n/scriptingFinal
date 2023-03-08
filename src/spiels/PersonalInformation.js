@@ -25,13 +25,13 @@ const PersonalInformation = () => {
 
                 Citizenship: Are you a Filipino? <br /><br />
                 </p>
-                    <div>
+                    <div className='selection'>
                         <button onClick={() => setFilipino(true)} >Yes</button>
                         <button onClick={() => setFilipino(false)}>No</button>
                     </div>
 
 
-                    {!filipino && <div><br /><p><input type="text" name="" id="" /> What is your citizenship?</p> </div>}
+                    {!filipino && <div><br /><p><input type="text" name="" id="" /><br /> What is your citizenship?</p> </div>}
 
                     <div className='page'>
 
