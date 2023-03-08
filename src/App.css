@@ -3,10 +3,13 @@
   padding: 0;
   margin: 0;
   font-family: Montserrat;
+  font-size: 1vw;
 }
 h1 {
-  top: 10vh;
-  position: absolute;
+  position: sticky;
+  top: 1vh;
+  font-size: 3vw;
+  background-color: white;
 }
 
 .App {
@@ -38,6 +41,7 @@ h1 {
   padding: 10px;
   box-shadow: 5px 5px 10px #888888;
   margin-bottom: 15px;
+  font-size: 1vw;
 }
 
 .footer {
@@ -83,18 +87,34 @@ h1 {
 }
 
 .forms form input {
-  margin: 5px 0px 2vh 0px;
+  margin: 1vh 0px;
   width: 20vw;
   font-size: 1.5vh;
-  height: 30px;
-  padding-left: 10px;
+  height: 3vh;
+  padding-left: 1vw;
 }
 .forms form select {
-  margin: 5px 0px 2vh 0px;
+  margin: 1vh 0px;
   width: 20vw;
-  height: 30px;
   font-size: 1.5vh;
-  padding-left: 10px;
+  height: 3vh;
+  padding-left: 1vw;
+}
+
+.forms form input[type="submit"] {
+  text-decoration: none;
+  height: 5vh;
+  width: 10vw;
+  background: rgb(255, 0, 0);
+  text-align: center;
+  font-size: 110%;
+  border-radius: 5px;
+  color: #fdfdfd;
+  font-weight: bold;
+  padding: 5px;
+  border-color: rgb(255, 255, 255);
+  border-style: solid;
+  border-width: 3px;
 }
 
 .middle {
@@ -119,10 +139,14 @@ h1 {
   /* box-shadow: #808080; */
   margin: 13px;
   height: 86vh;
+  padding: 0px 5vw;
+}
+
+.content input {
+  margin: 5px;
 }
 
 .content p {
-  /* padding: 0px 10vw; */
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -139,10 +163,18 @@ h1 {
 }
 
 .subcontent {
-  top: 5vh;
+  top: 7vh;
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
-
+.subcontent input {
+  width: 15vw;
+  font-size: 1.5vh;
+  height: 2vh;
+  padding-left: 1vw;
+  box-shadow: 5px 5px 15px 0px #888888;
+}
 
 .selection button {
   text-decoration: none;
@@ -157,7 +189,7 @@ h1 {
   padding: 1px;
   border-color: rgb(255, 255, 255);
   border-style: none;
-  margin: 10px 10px;
+  margin: 10px;
   box-shadow: 2px 5px 10px -1px #888888;
 }
 
@@ -175,7 +207,12 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
-
+.circ input {
+  width: 20vw;
+  font-size: 1.5vh;
+  height: 3vh;
+  padding-left: 1vw;
+}
 .circ button {
   text-decoration: none;
   height: 3vh;
@@ -189,7 +226,7 @@ h1 {
   padding: 1px;
   border-color: rgb(255, 255, 255);
   border-style: none;
-  margin: 0 10px 0 0;
+  margin: 10px;
   box-shadow: 2px 5px 10px -1px #888888;
 }
 
@@ -207,6 +244,7 @@ h1 {
 }
 
 .page button {
+  margin: 10px;
   text-decoration: none;
   height: 5vh;
   width: 10vw;
@@ -265,7 +303,7 @@ h1 {
 
 .spiels li:hover {
   /* background-color: rgba(255, 0, 0, 0.335); */
-  border-radius: 5px;
+  border-radius: 3px;
   box-shadow: 2px 5px 10px -1px #888888;
 }
 

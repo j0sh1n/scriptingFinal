@@ -23,7 +23,7 @@ const FormerEmployee = () => {
                 <button onClick={() => setValue('No')}>No</button>
 
             </div>
-            {value==='Yes' && <div><br /><label htmlFor="">Indicate the reason you left and separation date <br /><input type="text" /></label></div> }
+            {value==='Yes' && <div className='circ'><br /><label htmlFor="">Indicate the reason you left and separation date <br /><input type="text" /></label></div> }
             <div className='page'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 
