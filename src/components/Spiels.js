@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Spiels = () => {
     return (
-        <div className="spiels">
+        <div className="spiels flex-c">
 
             <h1>Spiels</h1>
             <ol>

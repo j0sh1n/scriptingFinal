@@ -26,6 +26,7 @@ function App() {
       <div className="App flex-c">
         <Header />
         <div className="middle flex-h">
+          {/* */}
           <Spiels />
 
           <Switch>
@@ -59,6 +60,7 @@ function App() {
             </Route>
           </Switch>
 
+          {/* */}
           <Forms />
         </div>
         <Footer />

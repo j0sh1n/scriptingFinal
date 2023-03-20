@@ -1,4 +1,4 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import { useHistory } from "react-router-dom";
 
 
@@ -49,7 +49,10 @@ const Amenability = () => {
                 />
                 Any medical condition/s that can affect your ability to work at night or on shifting schedules?
             </label>
-            {amenability2 && <label> Indicate the health condition: <input type="text" /></label>}<br />
+            {amenability2 &&
+                <label> Indicate the health condition:
+                    <input type="text" />
+                </label>}<br />
             <label>
                 <input type="checkbox"
                     checked={amenability3}

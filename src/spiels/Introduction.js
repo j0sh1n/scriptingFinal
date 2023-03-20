@@ -29,28 +29,30 @@ const Introduction = () => {
     }, [count])
 
 
-    // useEffect(() => {        
-    //     fetch(`https://www.zohoapis.com/bigin/v1/Deals`, {
-    //         method: 'GET',
-    //         dataType: 'JSONP',
-    //         mode: 'no-cors',
-    //         headers: 
-    //         {"Authorization": "Zoho-oauthtoken 1000.67b8ebacf175c0b3aecf891f57992383.a010f579dbc5e707509392aa98c99c55"},
-    //         "Access-Control-Allow-Origin" : "*",
-    //         "Content-type": "Application/json",
-    //        })
-    //         .then(response => {
-    //             console.log(response);
-    //         })
-    //         .then(data => {
-    //             console.log(data);
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
+    useEffect(() => {        
+        fetch(`https://www.zohoapis.com/bigin/v1/Deals`, {
+            method: 'GET',
+            dataType: 'JSONP',
+            mode: 'no-cors',
+            headers: 
+            {"Authorization": "Zoho-oauthtoken 1000.2684c61fb6f8fe9ceaea774d23bde5e9.f15f76dfd54896befcc3e5ac0f795d06"},
+            "Access-Control-Allow-Origin" : "*",
+            "Content-type": "Application/json",
+           })
+            .then(response => {
+                console.log(response);
+               
+
+            })
+            .then(data => {
+                console.log(data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
 
 
-    // }, [])
+    }, [])
 
     return (
 
