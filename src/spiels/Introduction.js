@@ -57,13 +57,13 @@ const Introduction = () => {
     return (
 
 
-        <div className='content'>
+        <div className='content flex-c center'>
 
             <h1>Introduction</h1>
 
             <p>{script}</p>
 
-            <div className='page'>
+            <div className='page flex-h button1'>
                 <button disabled={count === 0} onClick={() => adjustCount(-1)}>Back</button>
 
                 <button onClick={() => adjustCount(+1)}>Next</button>

@@ -8,7 +8,7 @@ const Qualification = () => {
     const [value, setValue] = useState();
     const [script, setScript] = useState();
     return (
-        <div className="content">
+        <div className="content flex-c center">
 
             <h1>Qualification</h1>
 
@@ -19,7 +19,7 @@ const Qualification = () => {
             <button onClick={() => setScript()}>Unqualified</button>
 
             {script && <div></div>}
-            <div className='page'>
+            <div className='page flex-h button1'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 
                 <button disabled={!value} onClick={() => navigate.push("/qualification")}>Next</button>

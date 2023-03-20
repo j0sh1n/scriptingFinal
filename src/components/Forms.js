@@ -51,7 +51,7 @@ const Forms = () => {
     }
 
     return (
-        <div className="forms flex-c">
+        <div className="forms flex-c center">
 
             <h1>Form</h1>
             <form onSubmit={handleSubmit} action="" className="flex-c">
@@ -168,8 +168,8 @@ const Forms = () => {
                     <option value="Not Qualified – Paypal experience with CVG/CNX">Not Qualified – Paypal experience with CVG/CNX</option>
                 </select>
                 {/* <input type="submit" className="button1" /> */}
-                {!pending && <div><button className="button1">Submit</button></div>}
-                {pending && <div><button disabled className="button1">Sending request...</button></div>}
+                {!pending && <div className="button1 flex-c center"><button>Submit</button></div>}
+                {pending && <div className="button1 flex-c center"><button disabled >Sending request...</button></div>}
             </form >
         </div >
     );

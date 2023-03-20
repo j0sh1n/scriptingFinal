@@ -63,7 +63,7 @@ function App() {
           {/* */}
           <Forms />
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

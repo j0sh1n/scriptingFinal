@@ -32,45 +32,54 @@ const Aspiration = () => {
 
 
     return (
-        <div className='content'>
+        <div className='content flex-c center'>
 
             <h1>Aspiration</h1>
+            <div className="maincontent flex-c">
+                <p>What made you interested to apply at ePerformax? <br /> <br /> And what would make you join/stay with us?</p><br />
+                <p><i> Identify the specific aspiration/want and use the appropriate aspiration statement.</i></p> <br />
+                <p>If your own story is similar to theirs, let them know!</p> <br />
 
-            <p>What made you interested to apply at ePerformax? <br /> <br /> And what would make you join/stay with us?</p><br />
-            <p><i> Identify the specific aspiration/want and use the appropriate aspiration statement.</i></p> <br />
-            <p>If your own story is similar to theirs, let them know!</p> <br />
+                <select onChange={(e) => setValue(e.target.value)}>
+                    <option value="0" disabled>
+                        Select aspiration
+                    </option>
+                    <option value="breadwinner">
+                        Bread Winner
+                    </option>
+                    <option value="money">
+                        Money
+                    </option>
+                    <option value="caresAboutMe">
+                        Cares About Me
+                    </option>
+                    <option value="englishSkill">
+                        English Skill
+                    </option>
+                    <option value="promotion">
+                        Promotion
+                    </option>
+                    <option value="notHappy">
+                        Not Happy
+                    </option>
+                    <option value="leader">
+                        Leader
+                    </option>
+                    <option value="stability">
+                        Stability
+                    </option>
+                </select><br />
+            </div>
+            <b>Aspiration script:</b>
 
-            <select onChange={(e) => setValue(e.target.value)}>
-                <option value="breadwinner">
-                    Bread Winner
-                </option>
-                <option value="money">
-                    Money
-                </option>
-                <option value="caresAboutMe">
-                    Cares About Me
-                </option>
-                <option value="englishSkill">
-                    English Skill
-                </option>
-                <option value="promotion">
-                    Promotion
-                </option>
-                <option value="notHappy">
-                    Not Happy
-                </option>
-                <option value="leader">
-                    Leader
-                </option>
-                <option value="stability">
-                    Stability
-                </option>
-            </select><br />
+            <div className="subcontent">
 
-            {value && <p> <b>Aspiration script</b>  <br /> <br /> {script}</p>}
+                {value && <p>   <br /> <br /> {script}</p>}
 
-            <div className='page'>
-                <button onClick={() => navigate.goBack()}>Back</button>
+            </div>
+
+            <div className='page flex-h button1'>
+                <button onClick={() => navigate.push("/amenability")}>Back</button>
 
                 <button disabled={!value} onClick={() => navigate.push("/qualification")}>Next</button>
             </div>

@@ -14,7 +14,7 @@ const DataPrivacy = () => {
     return (
 
 
-        <div className='content'>
+        <div className='content flex-c center'>
 
             <h1>Data Privacy</h1>
 
@@ -26,7 +26,7 @@ const DataPrivacy = () => {
                 />   AGREE
             </label><br />
 
-            <div className='page'>
+            <div className='page flex-h button1'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 
                 <button disabled={!dataPrivacy} onClick={() => navigate.push("/personalInformation")}>Next</button>

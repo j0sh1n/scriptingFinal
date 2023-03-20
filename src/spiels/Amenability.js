@@ -30,53 +30,74 @@ const Amenability = () => {
 
 
     return (
-        <div className='content'>
+        <div className='content flex-c center'>
 
             <h1>Amenability</h1>
+            <div className="maincontent">
 
-            <label>
-                <input type="checkbox"
-                    value={amenability1}
-                    onChange={handleChange1}
-                />
-                Night and/or shifting schedules?
-            </label><br />
+                <label>
+                    <input type="checkbox"
+                        value={amenability1}
+                        onChange={handleChange1}
+                    />
+                    Night and/or shifting schedules?
+                </label><br />
 
-            <label>
-                <input type="checkbox"
-                    value={amenability2}
-                    onChange={handleChange2}
-                />
-                Any medical condition/s that can affect your ability to work at night or on shifting schedules?
-            </label>
-            {amenability2 &&
-                <label> Indicate the health condition:
-                    <input type="text" />
-                </label>}<br />
-            <label>
-                <input type="checkbox"
-                    checked={amenability3}
-                    onChange={handleChange3}
-                />
-                Work on Holidays/Weekends/Overtime?
-            </label><br />
-            <label>
-                <input type="checkbox"
-                    checked={amenability4}
-                    onChange={handleChange4}
-                />
-                Amenable to work onsite Pasay/Roxas/Cebu?
-            </label>{!amenability4 && <label> <br /> Reason: <input type="text" /></label>}<br />
+                <label>
+                    <input type="checkbox"
+                        value={amenability2}
+                        onChange={handleChange2}
+                    />
+                    Any medical condition/s that can affect your ability to work at night or on shifting schedules?
+                </label>
+                <br />
+                <label>
+                    <input type="checkbox"
+                        checked={amenability3}
+                        onChange={handleChange3}
+                    />
+                    Work on Holidays/Weekends/Overtime?
+                </label><br />
+                <label>
+                    <input type="checkbox"
+                        checked={amenability4}
+                        onChange={handleChange4}
+                    />
+                    Amenable to work onsite Pasay/Roxas/Cebu?
+                </label>
+                <br />
+                <label>
+                    <input type="checkbox"
+                        checked={amenability5}
+                        onChange={handleChange5}
+                    />
+                    Can start immediately/ ASAP?
+                </label>
 
-            <label>
-                <input type="checkbox"
-                    checked={amenability5}
-                    onChange={handleChange5}
-                />
-                Can start immediately/ ASAP?
-            </label>{!amenability5 && <label> <br /> Why and when can they start? <input type="text" /></label>}<br />
 
-            <div className='page'>
+            </div>
+
+            <b>Follow up questions:</b>
+
+            <div className="subcontent input">
+
+
+                {amenability2 &&
+                    <label> Indicate the health condition:  <input type="text" />
+                    </label>} <br />
+
+                {!amenability4 &&
+                    <label>
+                        <br />  Reason for being not amenable to work onsite: <input type="text" />
+                    </label>}<br />
+
+                {!amenability5 &&
+                    <label>
+                        <br /> Why can't they start immediately and when can they start? <input type="text" /></label>}<br />
+
+            </div>
+
+            <div className='page flex-h button1'>
                 <button onClick={() => navigate.goBack()}>Back</button>
 
                 <button onClick={() => navigate.push("/aspiration")}>Next</button>
