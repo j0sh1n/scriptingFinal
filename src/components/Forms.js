@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 
 const Forms = () => {
@@ -32,22 +32,22 @@ const Forms = () => {
         console.log(form);
 
 
-        fetch(`https://www.zohoapis.com/bigin/v1/Deals`, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-                'Authorization': 'Zoho-oauthtoken 1000.2684c61fb6f8fe9ceaea774d23bde5e9.f15f76dfd54896befcc3e5ac0f795d06',
-                'Content-Type': 'application/json',      // 'Content-Type': 'application/x-www-form-urlencoded'
-                'Cookie': '3d223cf300=e7daf194bba5b5684705c7476baa48dd; JSESSIONID=3D6398D7182CCC1596E141861FED3EEE; _zcsr_tmp=0ad9f33f-d720-4f69-94ad-66dbe3743b6b; crmcsr=0ad9f33f-d720-4f69-94ad-66dbe3743b6b',
-                'Connection': 'keep-alive',
-                'Accept': '*/*',
-                'Accept-Encoding': 'gzip, deflate, br'
-            },
-            body: JSON.stringify(form)
-        }).then(() => {
-            console.log(form);
-            setPending(false);
-        })
+        // fetch(`https://www.zohoapis.com/bigin/v1/Deals`, {
+        //     method: 'POST',
+        //     mode: 'no-cors',
+        //     headers: {
+        //         'Authorization': 'Zoho-oauthtoken 1000.2684c61fb6f8fe9ceaea774d23bde5e9.f15f76dfd54896befcc3e5ac0f795d06',
+        //         'Content-Type': 'application/json',      // 'Content-Type': 'application/x-www-form-urlencoded'
+        //         'Cookie': '3d223cf300=e7daf194bba5b5684705c7476baa48dd; JSESSIONID=3D6398D7182CCC1596E141861FED3EEE; _zcsr_tmp=0ad9f33f-d720-4f69-94ad-66dbe3743b6b; crmcsr=0ad9f33f-d720-4f69-94ad-66dbe3743b6b',
+        //         'Connection': 'keep-alive',
+        //         'Accept': '*/*',
+        //         'Accept-Encoding': 'gzip, deflate, br'
+        //     },
+        //     body: JSON.stringify(form)
+        // }).then(() => {
+        //     console.log(form);
+        //     setPending(false);
+        // })
     }
 
     return (

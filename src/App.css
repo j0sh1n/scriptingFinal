@@ -14,7 +14,16 @@ body {
   font-family: Montserrat;
   font-size: 1vw;
 }
-
+.selected {
+  background-color: #0000001e;
+  border-radius: 3px;
+  
+/* color: #0000001e; */
+}
+.unselected{
+  background-color: #ffffff;
+  border-radius: 3px;
+}
 .flex-c {
   display: flex;
   flex-direction: column;
@@ -76,10 +85,7 @@ h1 {
   height: 85vh;
 }
 
-.spiels {
-  width: 20vw;
-  overflow-y: auto;
-}
+
 
 .forms {
   width: 20vw;
@@ -141,24 +147,27 @@ h1 {
   box-shadow: 0px 0px 10px 1px #888888;
   /* margin: 13px; */
   padding: 1vh 5vw;
+  border-radius: 10px;
 }
 
-.maincontent {
-}
+.maincontent {}
+
 .maincontent * {
   margin-top: 20px;
   padding-right: 5px;
 }
+
 .maincontent input {
   border-radius: 5px;
   margin-right: 10px;
 }
 
-.maincontent input:active {
-}
+/* .maincontent input:checkbox */
 
-.subcontent {
-}
+.maincontent input:active {}
+
+.subcontent {}
+
 .subcontent * {
   margin-top: 10px;
 }
@@ -168,6 +177,7 @@ h1 {
   align-items: center;
   overflow-y: auto;
   width: 25vw;
+
 }
 
 .spiels li {
@@ -178,17 +188,20 @@ h1 {
   height: 3vh;
 }
 
-.spiels li:hover {
-  /* background-color: rgba(255, 0, 0, 0.335); */
+/* .spiels li:hover {
+  background-color: rgba(255, 0, 0, 0.335);
   border-radius: 3px;
   box-shadow: 2px 5px 10px -1px #888888;
-}
+} */
 
 .spiels a {
   font-size: 2vh;
   text-decoration: none;
   font-weight: bold;
   color: rgb(136, 0, 0);
+  width: 17vw;
+  height: 3vh;
+  padding: 7px;
 }
 
 .spiels a:link {
@@ -201,11 +214,16 @@ h1 {
 
 .spiels a:hover {
   color: rgb(0, 0, 0);
+  border-radius: 3px;
+  box-shadow: 2px 5px 10px -1px #888888;
 }
+
 .spiels a:active {
   color: rgb(0, 0, 0);
   font-size: 1.95vh;
 }
+
+
 
 .center {
   align-items: center;
@@ -283,8 +301,7 @@ h1 {
   box-shadow: 0px 6px 3px -3px #888888;
 }
 
-.button2 {
-}
+.button2 {}
 
 .button2 button {
   margin: 5px;
@@ -292,7 +309,7 @@ h1 {
   padding: 0 3vw;
   height: 3vh;
   width: fit-content;
-  background-color: white;
+  /* background-color: white; */
   text-align: center;
   font-size: 110%;
   border-radius: 5px;
@@ -322,6 +339,7 @@ h1 {
   /* background-color: #000000bb;
   width: 40vw; */
 }
+
 .justify {
   justify-content: center;
 }

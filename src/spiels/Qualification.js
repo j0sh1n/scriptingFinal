@@ -1,30 +1,37 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-
 const Qualification = () => {
+  const navigate = useHistory();
+  const [value, setValue] = useState();
+  const [script, setScript] = useState();
+  return (
+    <div className="content flex-c center">
+      <h1>Qualification</h1>
 
-    const navigate = useHistory();
-    const [value, setValue] = useState();
-    const [script, setScript] = useState();
-    return (
-        <div className="content flex-c center">
+      <p>Thank you for taking the time to talk with me today.</p>
+      <br />
 
-            <h1>Qualification</h1>
+      <button onClick={() => setScript()}>Qualified</button>
+      <button onClick={() => setScript()}>Transfer</button>
+      <button onClick={() => setScript()}>Unqualified</button>
 
-            <p>Thank you for taking the time to talk with me today.</p><br />
+      {script && <div></div>}
+      <div className="page flex-h button1"></div>
 
-            <button onClick={() => setScript()}>Qualified</button>
-            <button onClick={() => setScript()}>Transfer</button>
-            <button onClick={() => setScript()}>Unqualified</button>
+      <div className="page flex-h ">
+        <div className="button1">
+          <button onClick={() => navigate.push("/aspiration")}>Back</button>
+        </div>
 
-            {script && <div></div>}
-            <div className='page flex-h button1'>
-                <button onClick={() => navigate.goBack()}>Back</button>
-
-                <button disabled={!value} onClick={() => navigate.push("/qualification")}>Next</button>
-            </div>
-        </div>);
-}
+        <div className="disabled">
+          <button disabled onClick={() => navigate.push("/qualification")}>
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Qualification;
