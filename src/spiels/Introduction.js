@@ -27,14 +27,8 @@ const Introduction = () => {
     }
   }, [count]);
 
-  useEffect(()=> fetch(`http://localhost:8080/api/auth`,{
-    method: "GET",
-    credentials: "include",
-  })
-  
 
-  , [])
- 
+
 
   return (
     <div className="content flex-c center">

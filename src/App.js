@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Spiels from "./components/Spiels";
 import Forms from "./components/Forms";
-// import Introduction from "./spiels/Introduction";
+import Introduction from "./spiels/Introduction";
 import DataPrivacy from "./spiels/DataPrivacy";
 import FormerEmployee from "./spiels/FormerEmployee.js";
 import PersonalInformation from "./spiels/PersonalInformation";
@@ -14,6 +14,7 @@ import CallCenterAgent from "./spiels/CallCenterAgent";
 import Aspiration from "./spiels/Aspiration";
 import Qualification from "./spiels/Qualification";
 import { Dashboard } from "./page/Dashboard";
+import LandingPage from "./spiels/LandingPage";
 
 function App() {
   return (
@@ -22,12 +23,18 @@ function App() {
       <div className="App flex-c">
         <Header />
         <div className="middle flex-h">
-          {/* */}
+
           <Spiels />
 
           <Switch>
+          <Route  path="/landing">
+              <LandingPage />
+            </Route>
             <Route exact path="/">
               <Dashboard />
+            </Route>
+            <Route path="/introducton">
+              <Introduction />
             </Route>
             <Route path="/dataPrivacy">
               <DataPrivacy />
@@ -55,7 +62,7 @@ function App() {
             </Route>
           </Switch>
 
-          {/* */}
+
           <Forms />
         </div>
         {/* <Footer /> */}

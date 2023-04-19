@@ -11,7 +11,7 @@ const Spiels = () => {
       <h1>Spiels</h1>
       <ol>
         <li >
-          <Link to="/" onClick={()=>setValue(1)} className={value ===  1 ? "selected" : ""}>
+          <Link to="/introduction" onClick={()=>setValue(1)} className={value ===  1 ? "selected" : ""}>
             Introduction
           </Link>
         </li>
