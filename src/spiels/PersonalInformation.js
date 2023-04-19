@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-
 const PersonalInformation = () => {
+
+
   //citizenship
-  const [filipino, setFilipino] = useState(true);
+  const [filipino, setFilipino] = useState();
 
   //const [age, setAge] = useState(false);
 
   const navigate = useHistory();
-
   return (
     <div className="content flex-c center">
       <h1>Personal Information</h1>
       <div className="maincontent">
         <p>
+
           {" "}
           Let's start with the easy questions. <br />
           <br />
@@ -30,8 +31,7 @@ const PersonalInformation = () => {
           <button onClick={() => setFilipino(false)} className={filipino ===  false ? "selected" : "unselected"}>No</button>
         </div>
       </div>
-
-      {!filipino && (
+      {filipino === false && (
         <div>
           <br />
           <p>
@@ -40,7 +40,6 @@ const PersonalInformation = () => {
           </p>
         </div>
       )}
-
       <div className="page flex-h button1">
         <button onClick={() => navigate.push("/dataPrivacy")}>
           Back

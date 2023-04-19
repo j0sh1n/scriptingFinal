@@ -77,7 +77,7 @@ const Amenability = () => {
           Can start immediately/ ASAP?
         </label>
       </div>
-
+<br />
       <b>Follow up questions:</b>
 
       <div className="subcontent input">

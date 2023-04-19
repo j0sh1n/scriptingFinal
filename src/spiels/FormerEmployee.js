@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 const FormerEmployee = () => {
   //page increment
-  const [value, setValue] = useState("");
+  const [formerEmployee, setFormerEmployee] = useState();
 
   const navigate = useHistory();
 
@@ -14,11 +14,11 @@ const FormerEmployee = () => {
       <p>Have you trained or been employed with us before?</p>
       <br />
       <div className="button2 flex-h justify">
-        <button onClick={() => setValue("Yes")}>Yes</button>
+        <button onClick={() => setFormerEmployee('yes')} className={formerEmployee ===  'yes' ? "selected" : "unselected"}>Yes</button>
 
-        <button onClick={() => setValue("No")}>No</button>
+        <button onClick={() => setFormerEmployee('no')} className={formerEmployee ===  'no' ? "selected" : "unselected"}>No</button>
       </div>
-      {value === "Yes" && (
+      {formerEmployee === 'yes' && (
         <div className="circ">
           <br />
           <label htmlFor="">
@@ -37,10 +37,10 @@ const FormerEmployee = () => {
           </button>
         </div>
 
-        <div className={!value ? "disabled" : "button1"}>
+        <div className={!formerEmployee ? "disabled" : "button1"}>
           <button
-            disabled={!value}
-            onClick={() => navigate.push("/callCenterAgent")}
+            disabled={!formerEmployee}
+            onClick={() => navigate.push("/callCenterAgent") }
           >
             Next
           </button>

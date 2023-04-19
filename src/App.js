@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
 import Spiels from "./components/Spiels";
 import Forms from "./components/Forms";
-import Introduction from "./spiels/Introduction";
+// import Introduction from "./spiels/Introduction";
 import DataPrivacy from "./spiels/DataPrivacy";
 import FormerEmployee from "./spiels/FormerEmployee.js";
 import PersonalInformation from "./spiels/PersonalInformation";
@@ -13,23 +13,21 @@ import Amenability from "./spiels/Amenability";
 import CallCenterAgent from "./spiels/CallCenterAgent";
 import Aspiration from "./spiels/Aspiration";
 import Qualification from "./spiels/Qualification";
+import { Dashboard } from "./page/Dashboard";
 
 function App() {
   return (
     <Router>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@300&display=swap');
-      </style>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@300&display=swap');</style>
       <div className="App flex-c">
         <Header />
         <div className="middle flex-h">
           {/* */}
-            <Spiels />
+          <Spiels />
 
           <Switch>
             <Route exact path="/">
-              <Introduction />
+              <Dashboard />
             </Route>
             <Route path="/dataPrivacy">
               <DataPrivacy />

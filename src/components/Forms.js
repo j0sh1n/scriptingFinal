@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 
+const Forms = (props) => {
 
-const Forms = () => {
+    // console.log({filipino});
     const [lastName, setLastName] = useState('Pascual');
     const [firstName, setFirstName] = useState('Joshua');
     const [middleName, setMiddleName] = useState('Nielo');
@@ -12,8 +13,13 @@ const Forms = () => {
     const [birthdate, setBirthdate] = useState('2023-05-06');
     const [site, setSite] = useState('Pasay');
     const [disposition, setDisposition] = useState('0');
+    const [filipino, setFilipino] = useState();
 
     const [pending, setPending] = useState(false);
+
+    // const props = () =>{
+    //     setFilipino={props.filipino}
+    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -26,11 +32,10 @@ const Forms = () => {
             address,
             city,
             site,
-            disposition
+            disposition,
         }
         setPending(true)
         console.log(form);
-
 
         // fetch(`https://www.zohoapis.com/bigin/v1/Deals`, {
         //     method: 'POST',
@@ -55,14 +60,14 @@ const Forms = () => {
 
             <h1>Form</h1>
             <form onSubmit={handleSubmit} action="" className="flex-c">
-                <label htmlFor="asdasdName">Last Name:</label>
+                <label htmlFor="lastname">Last Name:</label>
                 <input
                     type="text"
-                    name="asdasdasd"
+                    name="lastname"
                     required
                     value={lastName}
                     onChange={(e) => setLastName(e.target.value)}
-                    id="asdasdasd" />
+                    id="lastname" />
                 <label htmlFor="firstName">First Name:</label>
                 <input
                     type="text"

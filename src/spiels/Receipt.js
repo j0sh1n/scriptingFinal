@@ -1,8 +1,9 @@
 const Receipt = () => {
-    return ( 
-    <>
-    </>
-     );
+    return ( <>
+    
+    
+    
+    </> );
 }
  
 export default Receipt;

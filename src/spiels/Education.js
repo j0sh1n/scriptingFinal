@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
 const Education = () => {
-  const [value, setValue] = useState("");
+  const [education, setEducation] = useState("");
   const [extra, setExtra] = useState(false);
   const navigate = useHistory();
 
@@ -15,47 +15,52 @@ const Education = () => {
       <div className="button2">
         <button
           onClick={() => {
-            setValue("In College");
+            setEducation("In College");
             setExtra();
           }}
+          className={ education ===  'In College' ? "selected" : "unselected"}
         >
           In College
         </button>
         <button
           onClick={() => {
-            setValue("Graduated");
+            setEducation("Graduated");
             setExtra();
           }}
+          className={ education ===  'Graduated' ? "selected" : "unselected"}
+
         >
           Graduated
         </button>
         <button
           onClick={() => {
-            setValue("Undergraduate");
+            setEducation("Undergraduate");
             setExtra();
           }}
+          className={ education ===  'Undergraduate' ? "selected" : "unselected"}
+
         >
           Undergraduate
         </button>
       </div>
 
       <div className="subcontent input center flex-c">
-        {value === "In College" && (
+        {education === "In College" && (
           <div className="flex-c center">
             <p>Have you graduated? What degree/course/school?</p>
             <br />
             <input type="text" />
           </div>
         )}
-        {value === "Graduated" && (
+        {education === "Graduated" && (
           <div className="flex-c center">
             <p>
               Do you have pending board exam/result/licensure exam? <br />
             </p>
             <input type="text" />
             <div className="button2">
-              <button onClick={() => setExtra(true)}>Yes</button>
-              <button onClick={() => setExtra(false)}>No</button>
+              <button onClick={() => setExtra(true)} className={ extra ===  true ? "selected" : "unselected"}>Yes</button>
+              <button onClick={() => setExtra(false)} className={ extra ===  false ? "selected" : "unselected"}>No</button>
             </div>
           </div>
         )}
@@ -66,7 +71,7 @@ const Education = () => {
             <input type="text" />
           </div>
         )}
-        {value === "Undergraduate" && (
+        {education === "Undergraduate" && (
           <div className="flex-c center">
             <p>
               {" "}
@@ -85,9 +90,9 @@ const Education = () => {
           <button onClick={() => navigate.push("/formerEmployee")}>Back</button>
         </div>
 
-        <div className={!value ? "disabled" : "button1"}>
+        <div className={!education ? "disabled" : "button1"}>
           <button
-            disabled={!value}
+            disabled={!education}
             onClick={() => navigate.push("/callCenterAgent")}
           >
             Next

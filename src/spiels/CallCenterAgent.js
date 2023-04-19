@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 const CallCenterAgent = () => {
   //page increment
-  const [value, setValue] = useState();
+  const [fCCA, setFCCA] = useState();
   const [workXp, setWorkXp] = useState();
 
   const navigate = useHistory();
@@ -22,18 +22,20 @@ const CallCenterAgent = () => {
         <div className="button2 flex-h justify">
           <button
             onClick={() => {
-              setValue("Yes");
+              setFCCA("Yes");
               setWorkXp();
             }}
-           
+            className={fCCA === 'Yes' ? "selected" : "unselected"}
           >
             Yes
           </button>
           <button
             onClick={() => {
-              setValue("No");
+              setFCCA("No");
               setWorkXp();
             }}
+            className={fCCA === 'No' ? "selected" : "unselected"}
+
           >
             No
           </button>
@@ -41,7 +43,7 @@ const CallCenterAgent = () => {
         <br />
       </div>
 
-      {value === "Yes" && (
+      {fCCA === "Yes" && (
         <div className="subcontent input">
           <input type="text" /> Who did you work for? Which company?
           <br />
@@ -61,12 +63,13 @@ const CallCenterAgent = () => {
         </div>
       )}
 
-      {value === "No" && (
+      {fCCA === "No" && (
         <div className="subcontent button2">
           <p> Do you have other work experience?</p>
           <div className="selection flex-h justify">
-            <button onClick={() => setWorkXp("Yes")}>Yes</button>
-            <button onClick={() => setWorkXp("No")}>No</button>
+            
+            <button onClick={() => setWorkXp("Yes")} className={workXp === 'Yes' ? "selected" : "unselected"}>Yes</button>
+            <button onClick={() => setWorkXp("No")} className={workXp === 'No' ? "selected" : "unselected"}>No</button>
           </div>
         </div>
       )}
@@ -98,9 +101,9 @@ const CallCenterAgent = () => {
           <button onClick={() => navigate.push("/education")}>Back</button>
         </div>
 
-        <div className={!value ? "disabled" : "button1"}>
+        <div className={!fCCA ? "disabled" : "button1"}>
           <button
-            disabled={!value}
+            disabled={!fCCA}
             onClick={() => navigate.push("/amenability")}
           >
             Next
