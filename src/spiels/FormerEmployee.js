@@ -40,7 +40,7 @@ const FormerEmployee = () => {
         <div className={!formerEmployee ? "disabled" : "button1"}>
           <button
             disabled={!formerEmployee}
-            onClick={() => navigate.push("/callCenterAgent") }
+            onClick={() => navigate.push("/education") }
           >
             Next
           </button>

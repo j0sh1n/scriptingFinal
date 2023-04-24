@@ -22,7 +22,7 @@ const Introduction = () => {
     } else if (count === 1) {
       setScript("Great! This is how its going to work: First, Im going to ask a few questions to get to know you Second, we will discuss your previous work experience. As we go along, I will let you know what the what the next steps are. Does that sound ok?");
     } else if (count === 2) {
-      navigate.push("/dataprivacy");
+      navigate.push("/dataPrivacy");
       setValue(2);
     }
   }, [count]);

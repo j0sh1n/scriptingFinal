@@ -3,11 +3,11 @@ import { useLocation } from "react-router-dom";
 
 export const Dashboard = () => {
   const location = useLocation();
-  const [auth, setAuth] = useState();
-  const [code, setCode] = useState();
-  const [reject, setReject] = useState();
+  // const [auth, setAuth] = useState();
+  // const [code, setCode] = useState();
+  // const [reject, setReject] = useState();
   const [singleContact, setSingleContact] = useState(null);
-
+//  localStorage.removeItem("token")
   useEffect(() => {
     const generateToken = async () => {
       //code
@@ -27,53 +27,30 @@ export const Dashboard = () => {
       //session http only 
       if (tokenData.access_token) localStorage.setItem("access_token", tokenData.access_token);
       if (tokenData.refresh_token) localStorage.setItem("refresh_token", tokenData.refresh_token);
-    localStorage.setItem("token", true)
+      localStorage.setItem("token", 2)
     };
     generateToken();
   }, [location]);
 
-if (localStorage.token) console.log(localStorage.token) 
+  // const getAuth = () => {
+  //   fetch('http://localhost:8080/api/auth', {
+  //     method: "GET",
+  //     credentials: "include",
+  //   }).then(res => {
+  //     if (!res.ok) { // error coming back from server
+  //       throw Error('could not fetch the data for that resource');
+  //     }
+  //     return res.json();
+  //   }).then(data => {
+  //     console.log(data)
+  //     localStorage.setItem("token", true)
+  //     window.location.href = data.url;
 
+  //   })
+  // }
 
-  useEffect(() => {
-    const getAuth = () => {
-      fetch('http://localhost:8080/api/auth', {
-        method: "GET",
-        credentials: "include",
-      }).then(res => {
-        if (!res.ok) { // error coming back from server
-          throw Error('could not fetch the data for that resource');
-        }
-        return res.json();
-      }).then(data => {
-        console.log(data)
-        // window.location.href = data.url;
+  
 
-      })
-    }
-    getAuth()
-  }, [])
-
-
-  useEffect(() => {
-    const getCode = () => {
-      fetch('http://http://localhost:8080/api/deals', {
-        method: "GET",
-        headers: {
-          authorization: `${window.localStorage.getItem("access_token")}`,
-        }
-      }).then(res => {
-        if (!res.ok) { // error coming back from server
-          throw Error('could not fetch the data for that resource');
-        }
-        return res.json();
-      }).then(data => {
-        console.log(data)
-
-      })
-    }
-    getCode()
-  }, [])
 
   const handleLogin = async () => {
     const response = await fetch("http://localhost:8080/api/auth", {
@@ -82,9 +59,17 @@ if (localStorage.token) console.log(localStorage.token)
     });
     const data = await response.json();
     if (!response.ok) throw new Error("Something went wrong");
+    localStorage.setItem("token", 1)
     window.location.href = data.url;
   };
+  {
+    !localStorage.token &&
+    handleLogin()
+  }
+  {
 
+  }
+  
   const handleGetDeals = async () => {
     const response = await fetch("http://localhost:8080/api/deals", {
       method: "GET",
@@ -96,12 +81,15 @@ if (localStorage.token) console.log(localStorage.token)
     const data = await response.json();
 
     if (!response.ok) throw new Error(JSON.stringify(data));
+    localStorage.setItem("token", 3)
 
     console.log(data);
   };
 
+   {localStorage.token === 2  && handleGetDeals()}
+
   const handleSingleContact = async () => {
-    const response = await fetch("http://localhost:8080/api/contacts/5192516000001080026", {
+    const response = await fetch(`http://localhost:8080/api/contacts/${localStorage.contact}`, {
       method: "GET",
       headers: {
         authorization: `${window.localStorage.getItem("access_token")}`,
@@ -113,9 +101,14 @@ if (localStorage.token) console.log(localStorage.token)
     if (!response.ok) throw new Error(JSON.stringify(data));
 
     console.log(data);
+    localStorage.setItem("token", 4)
 
     setSingleContact(data.data[0]);
   };
+
+  localStorage.setItem("contact", '5192516000001022006')
+
+  { localStorage.token === 4 && handleSingleContact()}
 
   return (
     <>

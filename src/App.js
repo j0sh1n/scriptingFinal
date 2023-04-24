@@ -27,11 +27,12 @@ function App() {
           <Spiels />
 
           <Switch>
-          <Route  path="/landing">
+            <Route path="/landing">
               <LandingPage />
             </Route>
             <Route exact path="/">
-              <Dashboard />
+              {/* <Dashboard /> */}
+              <Introduction />
             </Route>
             <Route path="/introducton">
               <Introduction />
