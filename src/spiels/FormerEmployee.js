@@ -3,9 +3,10 @@ import { useHistory } from "react-router-dom";
 
 const FormerEmployee = () => {
   //page increment
-  const [formerEmployee, setFormerEmployee] = useState();
-
+  const [formerEmployee, setFormerEmployee] = useState(null);
   const navigate = useHistory();
+
+
 
   return (
     <div className="content flex-c center">
@@ -14,11 +15,10 @@ const FormerEmployee = () => {
       <p>Have you trained or been employed with us before?</p>
       <br />
       <div className="button2 flex-h justify">
-        <button onClick={() => setFormerEmployee('yes')} className={formerEmployee ===  'yes' ? "selected" : "unselected"}>Yes</button>
-
-        <button onClick={() => setFormerEmployee('no')} className={formerEmployee ===  'no' ? "selected" : "unselected"}>No</button>
+        <button onClick={() => setFormerEmployee(true)} className={formerEmployee ===  'yes' ? "selected" : "unselected"}>Yes</button>
+        <button onClick={() => setFormerEmployee(false)} className={formerEmployee ===  'no' ? "selected" : "unselected"}>No</button>
       </div>
-      {formerEmployee === 'yes' && (
+      {formerEmployee === true && (
         <div className="circ">
           <br />
           <label htmlFor="">
@@ -37,13 +37,15 @@ const FormerEmployee = () => {
           </button>
         </div>
 
-        <div className={!formerEmployee ? "disabled" : "button1"}>
+        <div className={formerEmployee === null ? "disabled" : "button1"}>
           <button
-            disabled={!formerEmployee}
+            disabled={formerEmployee === null}
             onClick={() => navigate.push("/education") }
           >
             Next
           </button>
+
+         
         </div>
       </div>
     </div>

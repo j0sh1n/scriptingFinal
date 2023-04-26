@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext, useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "./components/Header";
@@ -15,8 +15,16 @@ import Aspiration from "./spiels/Aspiration";
 import Qualification from "./spiels/Qualification";
 import { Dashboard } from "./page/Dashboard";
 import LandingPage from "./spiels/LandingPage";
+import Redirect from "./spiels/Redirect";
+
+export const Context = createContext();
+
+
 
 function App() {
+
+  const [applicant, setApplicant] = useState();
+
   return (
     <Router>
       <style>@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&family=Roboto:wght@300&display=swap');</style>
@@ -25,15 +33,19 @@ function App() {
         <div className="middle flex-h">
 
           <Spiels />
+          <Context.Provider value={{ applicant, setApplicant }}>
 
           <Switch>
-            <Route path="/landing">
+            <Route path="/start/:id">
               <LandingPage />
             </Route>
-            <Route exact path="/">
-              {/* <Dashboard /> */}
-              <Introduction />
-            </Route>
+              <Route exact path="/">
+                <Dashboard />
+              </Route>
+              <Route path="/redirect">
+                <Redirect />
+              </Route>
+
             <Route path="/introducton">
               <Introduction />
             </Route>
@@ -62,9 +74,8 @@ function App() {
               <Qualification />
             </Route>
           </Switch>
-
-
-          <Forms />
+            <Forms />
+            </Context.Provider>
         </div>
         {/* <Footer /> */}
       </div>

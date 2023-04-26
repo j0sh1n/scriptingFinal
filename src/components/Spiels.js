@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { Link, useLocation } from "react-router-dom";
 
 const Spiels = () => {
   const location = useLocation();
 
-  const [value, setValue] = useState(location.pathname);
-   {console.log(location.pathname)}
   return (
     <div className="spiels flex-c">
       <h1>Spiels</h1>
       <ol>
         <li >
-          <Link to="/" className={location.pathname === '/' ? "selected" : ""}>
+          <Link to="/introduction" className={location.pathname === '/introduction' ? "selected" : ""}>
             Introduction
-
           </Link>
         </li>
         <li >

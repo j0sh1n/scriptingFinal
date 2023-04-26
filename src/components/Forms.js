@@ -1,25 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Context } from "../App";
+const Forms = () => {
 
-const Forms = (props) => {
+
+
+    // const applicant = useContext(Context);
+    const { applicant, setApplicant } = useContext(Context);
+
+    console.log(applicant)
 
     // console.log({filipino});
-    const [lastName, setLastName] = useState('Pascual');
-    const [firstName, setFirstName] = useState('Joshua');
-    const [middleName, setMiddleName] = useState('Nielo');
-    const [email, setEmail] = useState('jpascual@eperformax.com');
-    const [contactNumber, setContactNumber] = useState('0999999999');
-    const [address, setAddress] = useState('1131 Metropolitan Avenue');
-    const [city, setCity] = useState('Makati City');
-    const [birthdate, setBirthdate] = useState('2023-05-06');
-    const [site, setSite] = useState('Pasay');
-    const [disposition, setDisposition] = useState('0');
-    const [filipino, setFilipino] = useState();
+    const [lastName, setLastName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [middleName, setMiddleName] = useState("");
+    const [email, setEmail] = useState("");
+    const [contactNumber, setContactNumber] = useState("");
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [birthdate, setBirthdate] = useState("");
+    const [site, setSite] = useState("");
+    const [disposition, setDisposition] = useState("");
+    const [filipino, setFilipino] = useState("");
 
     const [pending, setPending] = useState(false);
 
-    // const props = () =>{
-    //     setFilipino={props.filipino}
-    // }
+    useEffect(() => {
+        if (applicant) {
+
+            applicant.Last_Name && setLastName(applicant.Last_Name)
+
+        }
+
+    }, [applicant])
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -59,6 +73,10 @@ const Forms = (props) => {
         <div className="forms flex-c center">
 
             <h1>Form</h1>
+
+            {/* Applicant Code: {applicant.asdasd} */}
+            {/* Referral Code: {applicant.Referral_ID} <br /><br /> */}
+
             <form onSubmit={handleSubmit} action="" className="flex-c">
                 <label htmlFor="lastname">Last Name:</label>
                 <input
