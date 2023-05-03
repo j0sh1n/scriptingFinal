@@ -28,7 +28,7 @@ const DataPrivacy = () => {
 
       <div className="page flex-h ">
         <div className="button1">
-          <button onClick={() => navigate.push("/")}>Back</button>
+          <button onClick={() => navigate.push("/redirect")}>Back</button>
         </div>
 
         <div className={!dataPrivacy ? "disabled" : "button1"}>

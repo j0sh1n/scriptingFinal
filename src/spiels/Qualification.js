@@ -11,10 +11,10 @@ const Qualification = () => {
 
       <p>Thank you for taking the time to talk with me today.</p>
       <br />
+      <div className="button1 flex-h center" >      <button onClick={() => setScript()}>Qualified</button>
+        <button onClick={() => setScript()}>Transfer</button>
+        <button onClick={() => setScript()}>Unqualified</button></div>
 
-      <button onClick={() => setScript()}>Qualified</button>
-      <button onClick={() => setScript()}>Transfer</button>
-      <button onClick={() => setScript()}>Unqualified</button>
 
       {script && <div></div>}
       <div className="page flex-h button1"></div>

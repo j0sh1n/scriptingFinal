@@ -10,7 +10,7 @@ const Spiels = () => {
       <h1>Spiels</h1>
       <ol>
         <li >
-          <Link to="/introduction" className={location.pathname === '/introduction' ? "selected" : ""}>
+          <Link to="/redirect" className={location.pathname === '/redirect' ? "selected" : ""}>
             Introduction
           </Link>
         </li>
@@ -54,6 +54,7 @@ const Spiels = () => {
             Qualification
           </Link>
         </li>
+        
       </ol>
     </div>
   );

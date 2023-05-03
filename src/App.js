@@ -16,6 +16,7 @@ import Qualification from "./spiels/Qualification";
 import { Dashboard } from "./page/Dashboard";
 import LandingPage from "./spiels/LandingPage";
 import Redirect from "./spiels/Redirect";
+import Receipt from "./spiels/Receipt";
 
 export const Context = createContext();
 
@@ -35,47 +36,51 @@ function App() {
           <Spiels />
           <Context.Provider value={{ applicant, setApplicant }}>
 
-          <Switch>
-            <Route path="/start/:id">
-              <LandingPage />
-            </Route>
+            <Switch>
+              <Route path="/start/:id">
+                <LandingPage />
+              </Route>
               <Route exact path="/">
                 <Dashboard />
               </Route>
               <Route path="/redirect">
                 <Redirect />
-              </Route>
+                <Introduction />
 
-            <Route path="/introducton">
-              <Introduction />
-            </Route>
-            <Route path="/dataPrivacy">
-              <DataPrivacy />
-            </Route>
-            <Route path="/personalInformation">
-              <PersonalInformation />
-            </Route>
-            <Route path="/formerEmployee">
-              <FormerEmployee />
-            </Route>
-            <Route path="/education">
-              <Education />
-            </Route>
-            <Route path="/callCenterAgent">
-              <CallCenterAgent />
-            </Route>
-            <Route path="/amenability">
-              <Amenability />
-            </Route>
-            <Route path="/aspiration">
-              <Aspiration />
-            </Route>
-            <Route path="/qualification">
-              <Qualification />
-            </Route>
-          </Switch>
+              </Route>
+              {/* <Route path="/introducton">
+                <Introduction />
+              </Route> */}
+              <Route path="/dataPrivacy">
+                <DataPrivacy />
+              </Route>
+              <Route path="/personalInformation">
+                <PersonalInformation />
+              </Route>
+              <Route path="/formerEmployee">
+                <FormerEmployee />
+              </Route>
+              <Route path="/education">
+                <Education />
+              </Route>
+              <Route path="/callCenterAgent">
+                <CallCenterAgent />
+              </Route>
+              <Route path="/amenability">
+                <Amenability />
+              </Route>
+              <Route path="/aspiration">
+                <Aspiration />
+              </Route>
+              <Route path="/qualification">
+                <Qualification />
+              </Route>
+              <Route path="/receipt">
+                <Receipt />
+              </Route>
+            </Switch>
             <Forms />
-            </Context.Provider>
+          </Context.Provider>
         </div>
         {/* <Footer /> */}
       </div>

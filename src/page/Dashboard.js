@@ -1,4 +1,6 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext } from "react";
+import { useHistory } from "react-router-dom";
+
 import { Context } from "../App";
 
 
@@ -29,8 +31,10 @@ export const Dashboard = () => {
     setApplicant
   } = useContext(Context);
 
+  const navigate = useHistory();
 
-console.log(applicant)
+
+  // console.log(applicant)
 
   useEffect(() => {
 
@@ -69,28 +73,6 @@ console.log(applicant)
   return (
     <>
 
-
-      <div>
-
-
-
-        {/* 
-        <button onClick={handleLogin}>Login</button>
-
-        <button onClick={handleGetDeals}>Get Deals</button>
-
-        <button onClick={handleSingleContact}>Get Single Contact</button>
-
-        <div>
-          <input onChange={() => console.log} value={singleContact ? singleContact.Email : "Waley pa value"} />
-        </div> */}
-        <div>
-
-          { }
-        </div>
-
-
-      </div>
     </>
   );
 };

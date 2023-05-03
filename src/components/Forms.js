@@ -1,33 +1,47 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../App";
+
 const Forms = () => {
 
+
+    window.onbeforeunload = confirmExit;
+
+    function confirmExit() {
+        if (disposition === 0)
+            return "No disposition";
+    }
 
 
     // const applicant = useContext(Context);
     const { applicant, setApplicant } = useContext(Context);
 
-    console.log(applicant)
-
-    // console.log({filipino});
-    const [lastName, setLastName] = useState("");
-    const [firstName, setFirstName] = useState("");
-    const [middleName, setMiddleName] = useState("");
-    const [email, setEmail] = useState("");
-    const [contactNumber, setContactNumber] = useState("");
-    const [address, setAddress] = useState("");
-    const [city, setCity] = useState("");
-    const [birthdate, setBirthdate] = useState("");
-    const [site, setSite] = useState("");
-    const [disposition, setDisposition] = useState("");
-    const [filipino, setFilipino] = useState("");
-
+    const [disposition, setDisposition] = useState("0");
+    // const [citizenship, setCitizenship] = useState("");
+    const [applicantObj, setApplicantObj] = useState({
+        Last_Name: "",
+        First_Name: "",
+        Middle_Name: "",
+        Email: "",
+        Phone: "",
+        Address_1: "",
+        City: "",
+        Date_of_Birth: "",
+        Location: "",
+        Citizenship: ""
+    })
     const [pending, setPending] = useState(false);
 
     useEffect(() => {
         if (applicant) {
 
-            applicant.Last_Name && setLastName(applicant.Last_Name)
+            for (const key in applicant) {
+                if (applicantObj.hasOwnProperty(key)) {
+                    setApplicantObj(prev => ({
+                        ...prev,
+                        [key]: applicant[key]
+                    }))
+                }
+            }
 
         }
 
@@ -36,20 +50,15 @@ const Forms = () => {
 
 
     const handleSubmit = (e) => {
+
+
         e.preventDefault();
         const form = {
-            lastName,
-            firstName,
-            middleName,
-            email,
-            contactNumber,
-            address,
-            city,
-            site,
-            disposition,
+            applicantObj
         }
         setPending(true)
         console.log(form);
+
 
         // fetch(`https://www.zohoapis.com/bigin/v1/Deals`, {
         //     method: 'POST',
@@ -69,6 +78,12 @@ const Forms = () => {
         // })
     }
 
+    const onChangeValue = (e) => {
+        setApplicantObj({
+            [e.target.name]: e.target.value
+        })
+    }
+
     return (
         <div className="forms flex-c center">
 
@@ -81,73 +96,74 @@ const Forms = () => {
                 <label htmlFor="lastname">Last Name:</label>
                 <input
                     type="text"
-                    name="lastname"
+                    name="Last_Name"
                     required
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    value={applicantObj.Last_Name}
+                    // onChange={(e) => setLastName(e.target.value)}
+                    onChange={(e) => onChangeValue(e)}
                     id="lastname" />
                 <label htmlFor="firstName">First Name:</label>
                 <input
                     type="text"
-                    name="firstName"
+                    name="First_Name"
                     required
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    value={applicantObj.First_Name}
+                    onChange={(e) => onChangeValue(e)}
                     id="firstName" />
                 <label htmlFor="middleName">Middle Name:</label>
                 <input
                     type="text"
-                    name="middleName"
+                    name="Middle_Name"
                     required
-                    value={middleName}
-                    onChange={(e) => setMiddleName(e.target.value)}
+                    value={applicantObj.Middle_Name}
+                    onChange={(e) => onChangeValue(e)}
                     id="middleName" />
                 <label htmlFor="email">Personal Email:</label>
                 <input
                     type="email"
                     name="email"
                     required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={applicantObj.Email}
+                    onChange={(e) => onChangeValue(e)}
                     id="email" />
                 <label htmlFor="contactNumber">Contact Number:</label>
                 <input
                     type="text"
-                    name="conactNumber"
+                    name="Phone"
                     required
-                    value={contactNumber}
-                    onChange={(e) => setContactNumber(e.target.value)}
+                    value={applicantObj.Phone}
+                    onChange={(e) => onChangeValue(e)}
                     id="contactNumber" />
                 <label htmlFor="address">Address:</label>
                 <input
                     type="text"
-                    name="address"
+                    name="Address_1"
                     required
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
+                    value={applicantObj.Address_1}
+                    onChange={(e) => onChangeValue(e)}
                     id="address" />
                 <label htmlFor="city">City:</label>
                 <input
                     type="text"
-                    name="city"
+                    name="City"
                     required
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
+                    value={applicantObj.City}
+                    onChange={(e) => onChangeValue(e)}
                     id="city" />
                 <label htmlFor="birthdate">Birthdate:</label>
                 <input
                     type="date"
-                    name="bithdate"
+                    name="Date_of_Birth"
                     required
-                    value={birthdate}
-                    onChange={(e) => setBirthdate(e.target.value)}
+                    value={applicantObj.Date_of_Birth}
+                    onChange={(e) => onChangeValue(e)}
                     id="birthdate" />
                 <label htmlFor="site">Site Applying for:</label>
                 <select
-                    value={site}
+                    value={applicantObj.Location}
                     required
-                    onChange={(e) => setSite(e.target.value)}
-                    name="site"
+                    onChange={(e) => onChangeValue(e)}
+                    name="Location"
                     id="site">
                     <option value="0" disabled >
                         Select site

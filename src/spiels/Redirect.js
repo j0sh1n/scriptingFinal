@@ -4,11 +4,12 @@ import React, {
     useContext,
     useState
 } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory,useLocation } from "react-router-dom";
 import { Context } from "../App";
 
 
 const Redirect = () => {
+    const navigate = useHistory();
 
     const { applicant, setApplicant } = useContext(Context);
 
@@ -60,6 +61,7 @@ const Redirect = () => {
     }, []);
 
 
+    // if (applicant )navigate.push("/introduction");
 
 
     return (<>
