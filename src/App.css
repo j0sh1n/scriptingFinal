@@ -17,10 +17,10 @@ body {
 .selected {
   background-color: #0000001e;
   border-radius: 3px;
-  
-/* color: #0000001e; */
+
+  /* color: #0000001e; */
 }
-.unselected{
+.unselected {
   background-color: #ffffff;
   border-radius: 3px;
 }
@@ -85,8 +85,6 @@ h1 {
   height: 85vh;
 }
 
-
-
 .forms {
   width: 20vw;
   overflow-y: auto;
@@ -150,7 +148,8 @@ h1 {
   border-radius: 10px;
 }
 
-.maincontent {}
+.maincontent {
+}
 
 .maincontent * {
   margin-top: 20px;
@@ -164,9 +163,11 @@ h1 {
 
 /* .maincontent input:checkbox */
 
-.maincontent input:active {}
+.maincontent input:active {
+}
 
-.subcontent {}
+.subcontent {
+}
 
 .subcontent * {
   margin-top: 10px;
@@ -177,7 +178,6 @@ h1 {
   align-items: center;
   overflow-y: auto;
   width: 25vw;
-
 }
 
 .spiels li {
@@ -222,8 +222,6 @@ h1 {
   color: rgb(0, 0, 0);
   font-size: 1.95vh;
 }
-
-
 
 .center {
   align-items: center;
@@ -301,7 +299,8 @@ h1 {
   box-shadow: 0px 6px 3px -3px #888888;
 }
 
-.button2 {}
+.button2 {
+}
 
 .button2 button {
   margin: 5px;
@@ -342,4 +341,8 @@ h1 {
 
 .justify {
   justify-content: center;
+}
+
+p {
+  line-height: 5vh;
 }

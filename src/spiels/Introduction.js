@@ -33,8 +33,8 @@ const Introduction = () => {
   return (
     <div className="content flex-c center">
       <h1>Introduction</h1>
-
-      <p>{script}</p>
+<div className="line-height"><p>{script}</p></div>
+      
 
       <div className="page flex-h ">
         <div className={count === 0 ? "disabled" : "button1"}>

@@ -14,8 +14,8 @@ const CallCenterAgent = () => {
       <div className="maincontent center">
         <p>
           Thanks for sharing some of your details <br />
-          <br /> Let's talk about your work experience <br />
-          <br /> Have you worked in call center before?
+          Let's talk about your work experience <br />
+          Have you worked in call center before?
         </p>
         <br />
 
@@ -67,7 +67,7 @@ const CallCenterAgent = () => {
         <div className="subcontent button2">
           <p> Do you have other work experience?</p>
           <div className="selection flex-h justify">
-            
+
             <button onClick={() => setWorkXp("Yes")} className={workXp === 'Yes' ? "selected" : "unselected"}>Yes</button>
             <button onClick={() => setWorkXp("No")} className={workXp === 'No' ? "selected" : "unselected"}>No</button>
           </div>

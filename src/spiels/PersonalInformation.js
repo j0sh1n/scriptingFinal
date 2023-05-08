@@ -14,21 +14,18 @@ const PersonalInformation = () => {
       <h1>Personal Information</h1>
       <div className="maincontent">
         <p>
-
-          {" "}
           Let's start with the easy questions. <br />
-          <br />
-          <br />
+  
           Ask or verify for full name, email address, and Facebook account{" "}
-          <br /> <br />
-          Which city do you currently live in? <br /> <br />
-          Are you currently of legal age to work? <br /> <br />
+<br />
+          Which city do you currently live in? <br />
+          Are you currently of legal age to work? <br /> 
           Citizenship: Are you a Filipino? <br />
           <br />
         </p>
         <div className="flex-h button2 justify">
-          <button onClick={() => setFilipino(true)} className={filipino ===  true ? "selected" : "unselected"}>Yes</button>
-          <button onClick={() => setFilipino(false)} className={filipino ===  false ? "selected" : "unselected"}>No</button>
+          <button onClick={() => setFilipino(true)} className={filipino === true ? "selected" : "unselected"}>Yes</button>
+          <button onClick={() => setFilipino(false)} className={filipino === false ? "selected" : "unselected"}>No</button>
         </div>
       </div>
       {filipino === false && (

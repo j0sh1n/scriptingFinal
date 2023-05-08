@@ -54,6 +54,11 @@ const Spiels = () => {
             Qualification
           </Link>
         </li>
+        <li >
+          <Link to="/receipt" disabled className={location.pathname === "/receipt" ? "selected" : "unselected"}>
+            Receipt
+          </Link>
+        </li>
         
       </ol>
     </div>

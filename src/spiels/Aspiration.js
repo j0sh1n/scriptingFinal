@@ -47,7 +47,7 @@ const Aspiration = () => {
       <h1>Aspiration</h1>
       <div className="maincontent flex-c">
         <p>
-          What made you interested to apply at ePerformax? <br /> <br /> And
+          What made you interested to apply at ePerformax? <br />And
           what would make you join/stay with us?
         </p>
         <br />
@@ -73,15 +73,12 @@ const Aspiration = () => {
           <option value="leader">Leader</option>
           <option value="stability">Stability</option>
         </select>
-        <br />
       </div>
       <b>Aspiration script:</b>
-
       <div className="subcontent">
         {value && (
           <p>
-            {" "}
-            <br /> <br /> {script}
+            {script}
           </p>
         )}
       </div>

@@ -3,19 +3,21 @@ import { Context } from "../App";
 
 const Forms = () => {
 
+    // window.onbeforeunload = confirmExit;
 
-    window.onbeforeunload = confirmExit;
 
-    function confirmExit() {
-        if (disposition === 0)
-            return "No disposition";
-    }
-
+    
+    // function confirmExit() {
+    //     return "No disposition";
+    //     // if (!disposition)
+    //     // console.log('gumana')
+    //     //     
+    // }
 
     // const applicant = useContext(Context);
     const { applicant, setApplicant } = useContext(Context);
 
-    const [disposition, setDisposition] = useState("0");
+    const [disposition, setDisposition] = useState();
     // const [citizenship, setCitizenship] = useState("");
     const [applicantObj, setApplicantObj] = useState({
         Last_Name: "",
@@ -89,6 +91,17 @@ const Forms = () => {
 
             <h1>Form</h1>
 
+            {applicant !== undefined ?
+                <b>
+                    {applicant.Referral_ID !== undefined ? <b>Referral ID: {applicant.Referral_ID}</b> : ''}
+                    <br />
+                    {applicant.Lead_Type !== undefined ? <b>Lead Type: {applicant.Lead_Type}</b> : ''}
+
+                </b>
+
+                : ''}
+            <br />
+
             {/* Applicant Code: {applicant.asdasd} */}
             {/* Referral Code: {applicant.Referral_ID} <br /><br /> */}
 
@@ -160,12 +173,12 @@ const Forms = () => {
                     id="birthdate" />
                 <label htmlFor="site">Site Applying for:</label>
                 <select
-                    value={applicantObj.Location}
+                    value={applicantObj.Location === undefined ? '' : applicantObj.Location}
                     required
                     onChange={(e) => onChangeValue(e)}
                     name="Location"
                     id="site">
-                    <option value="0" disabled >
+                    <option value='' disabled >
                         Select site
                     </option>
                     <option value="Pasay">
@@ -185,7 +198,7 @@ const Forms = () => {
                     id=""
                     value={disposition}
                     required>
-                    <option disabled value={0}>Select disposition</option>
+                    <option disabled value=''>Select disposition</option>
                     <option value="Qualified - Scheduled CSA">Qualified - Scheduled CSA</option>
                     <option value="Qualified - Active File-E">Qualified - Active File-E</option>
                     <option value="Not Qualified">Not Qualified</option>
@@ -207,7 +220,7 @@ const Forms = () => {
                     <option value="Not Qualified – Paypal experience with CVG/CNX">Not Qualified – Paypal experience with CVG/CNX</option>
                 </select>
                 {/* <input type="submit" className="button1" /> */}
-                {!pending && <div className="button1 flex-c center"><button>Submit</button></div>}
+                {!pending && <div className="button1 flex-c center"><button>Save</button></div>}
                 {pending && <div className="button1 flex-c center"><button disabled >Sending request...</button></div>}
             </form >
         </div >

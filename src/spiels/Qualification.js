@@ -8,14 +8,14 @@ const Qualification = () => {
   return (
     <div className="content flex-c center">
       <h1>Qualification</h1>
-
-      <p>Thank you for taking the time to talk with me today.</p>
-      <br />
-      <div className="button1 flex-h center" >      <button onClick={() => setScript()}>Qualified</button>
+      <div className="maincontent"><br />
+        <p>Thank you for taking the time to talk with me today.</p>
+      </div>
+      <br /><br /><br />
+      <div className="button1 flex-h center" >
+        <button onClick={() => setScript()}>Qualified</button>
         <button onClick={() => setScript()}>Transfer</button>
         <button onClick={() => setScript()}>Unqualified</button></div>
-
-
       {script && <div></div>}
       <div className="page flex-h button1"></div>
 
