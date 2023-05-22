@@ -6,7 +6,7 @@ const LandingPage = () => {
     const { id } = useParams();
     const navigate = useHistory();
 
-    localStorage.setItem("id",id)
+    localStorage.setItem("dealId",id)
     navigate.push("/")
 
 

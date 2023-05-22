@@ -40,35 +40,15 @@ export const Dashboard = () => {
 
     const handleLogin = async () => {
       // console.log(localStorage.token)
-      const response = await fetch("http://localhost:8080/api/auth", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/bigin/login`, {
         method: "GET",
-        credentials: "include",
       });
       const data = await response.json();
       if (!response.ok) throw new Error("Something went wrong");
       window.location.href = data.url;
     };
-
-    handleLogin();
+    handleLogin()
   }, []);
-
-
-  const handleGetDeals = async () => {
-    const response = await fetch("http://localhost:8080/api/deals", {
-      method: "GET",
-      headers: {
-        authorization: `${window.localStorage.getItem("access_token")}`,
-      },
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) throw new Error(JSON.stringify(data));
-
-    console.log(data);
-  };
-
-
 
   return (
     <>
